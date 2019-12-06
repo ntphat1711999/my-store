@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head') -%>
+  </head>
+  <body>
+    <%- include('../../partials/header') -%>
+    <div class="container">
+      <h1>
+        <span>Staff</span>
+        <a href="staff/create">
+          <button class="btn btn-outline-success">New</button>
+        </a>
+      </h1>
+      <div class="d-flex align-items-center"></div>
+      <table class="table table-bordered table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Action</th>
+        </tr>
+        <% users.forEach(function(user,index) {%>
+        <tr>
+          <td><%=index+1 %></td>
+          <td><%=user.name %></td>
+          <td><%=user.phone %></td>
+          <td>
+            <a href="staff/:id">
+              <button type="button" class="btn btn-primary">View</button>
+            </a>
+          </td>
+        </tr>
+        <% }); %>
+      </table>
+    </div>
+    <%- include('../../partials/footer') -%>
+  </body>
+</html>

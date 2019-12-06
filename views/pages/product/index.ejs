@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head') -%>
+  </head>
+  <body>
+    <%- include('../../partials/header') -%>
+    <div class="container">
+      <h1>
+        <span>Product</span>
+        <a href="product/create">
+          <button class="btn btn-outline-success">New</button>
+        </a>
+      </h1>
+      <div class="d-flex align-items-center"></div>
+      <table class="table table-bordered table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Seller</th>
+          <th>Action</th>
+        </tr>
+        <% products.forEach(function(product,index) {%>
+        <tr>
+          <td><%=index+1 %></td>
+          <td><%=product.name %></td>
+          <td><%=product.price %></td>
+          <td><%=product.seller %></td>
+          <td>
+            <a href="staff/:id">
+              <button type="button" class="btn btn-primary">View</button>
+            </a>
+          </td>
+        </tr>
+        <% }); %>
+      </table>
+    </div>
+    <%- include('../../partials/footer') -%>
+  </body>
+</html>
