@@ -2,41 +2,35 @@
 <html lang="en">
   <head>
     <%- include('../../partials/head') -%>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"
+    />
   </head>
   <body>
     <%- include('../../partials/header') -%>
     <div class="container">
       <h1>
-        <span>Product</span>
-        <a href="product/create">
-          <button class="btn btn-outline-success">New</button>
-        </a>
+        <span>View products</span>
       </h1>
       <div class="d-flex align-items-center"></div>
       <table class="table table-bordered table-dark">
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Price</th>
           <th>Seller</th>
           <th>SellDate</th>
-          <th>Action</th>
+          <th>Relative-time</th>
         </tr>
-        <% products.forEach(function(product,index) {%>
-
         <tr>
-          <td><%=index+1 %></td>
           <td><%=product.name %></td>
           <td><%=product.price %></td>
           <td><%=product.seller %></td>
-          <td><%=product.sellDate%></td>
+          <td><%=sellDate%></td>
           <td>
-            <a href="/product/<%= product._id%>">
-              <button type="button" class="btn btn-primary">View</button>
-            </a>
+            <%=dateExp%>
           </td>
         </tr>
-        <% }); %>
       </table>
     </div>
     <%- include('../../partials/footer') -%>

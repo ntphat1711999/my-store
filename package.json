@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon --inspect app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/ntphat1711999/my-store#readme",
   "dependencies": {
+    "@github/time-elements": "^3.0.10",
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "moment": "^2.24.0",
     "mongoose": "^5.7.13",
     "nodemon": "^2.0.1"
   }

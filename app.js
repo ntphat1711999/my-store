@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 // Database connect
 mongoose.set('useUnifiedTopology', true);
@@ -19,6 +20,12 @@ const productRoute = require('./routes/product.route');
 
 const app = express();
 const PORT = process.env.PORT;
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+ 
+// parse application/json
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
