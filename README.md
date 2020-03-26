@@ -1,4 +1,4 @@
-# my-store
+# MY STORE PROJECT
 
 ### Install & Run
 
