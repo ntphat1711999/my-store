@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../../partials/head') -%>
-  </head>
-  <body>
-    <%- include('../../partials/header') -%>
-    <div class="container">
-      <h1>
-        <span>Product</span>
-        <a href="product/create">
-          <button class="btn btn-outline-success">New</button>
-        </a>
-      </h1>
-      <div class="d-flex align-items-center"></div>
-      <table class="table table-bordered table-dark">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Seller</th>
-          <th>SellDate</th>
-          <th>Action</th>
-        </tr>
-        <% products.forEach(function(product,index) {%>
 
-        <tr>
-          <td><%=index+1 %></td>
-          <td><%=product.name %></td>
-          <td><%=product.price %></td>
-          <td><%=product.seller %></td>
-          <td><%=product.sellDate%></td>
-          <td>
-            <a href="/product/<%= product._id%>">
-              <button type="button" class="btn btn-primary">View</button>
-            </a>
-          </td>
-        </tr>
-        <% }); %>
-      </table>
-    </div>
-    <%- include('../../partials/footer') -%>
-  </body>
+<head>
+  <%- include('../../partials/head') -%>
+</head>
+
+<body>
+  <%- include('../../partials/header') -%>
+  <div class="container">
+    <h1>
+      <span>Sản phẩm</span>
+      <a href="/product/create">
+        <button class="btn btn-outline-success">Thêm</button>
+      </a>
+    </h1>
+    <div class="d-flex align-items-center"></div>
+    <table class="table table-bordered table-dark">
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Hình ảnh</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Ngày nhập hàng</th>
+        <th>Tùy chọn</th>
+      </tr>
+      <% products.forEach(function(product,index) {%>
+
+      <tr>
+        <td><%=index+1 %></td>
+        <td><%=product.name %></td>
+        <td>
+          <img src="<%=product.image %> " alt="Hình minh hoạ" width="200px" height="200px">
+        </td>
+        <td><%=product.price %></td>
+        <td><%=product.amount %></td>
+        <td><%=product.importDate %></td>
+        <td>
+          <a href="/product/update/<%= product._id%>">
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-pencil-square-o"></i>
+            </button>
+          </a>
+          |
+          <a href="/product/delete/<%= product._id%>">
+            <button type="button" class="btn btn-danger">
+              <i class="fa fa-trash"></i>
+            </button>
+          </a>
+        </td>
+      </tr>
+      <% }); %>
+    </table>
+  </div>
+  <%- include('../../partials/footer') -%>
+</body>
+
 </html>

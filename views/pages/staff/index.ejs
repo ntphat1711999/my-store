@@ -8,7 +8,7 @@
     <div class="container">
       <h1>
         <span>Staff</span>
-        <a href="staff/create">
+        <a href="/staff/create">
           <button class="btn btn-outline-success">New</button>
         </a>
       </h1>
@@ -20,18 +20,18 @@
           <th>Phone</th>
           <th>Action</th>
         </tr>
-        <% users.forEach(function(user,index) {%>
+        <% if !staffs { %> <% staffs.forEach(function(staff,index) {%>
         <tr>
           <td><%=index+1 %></td>
-          <td><%=user.name %></td>
-          <td><%=user.phone %></td>
+          <td><%=staff.name %></td>
+          <td><%=staff.phone %></td>
           <td>
-            <a href="staff/:id">
+            <a href="/staff/<%= staff.id%>">
               <button type="button" class="btn btn-primary">View</button>
             </a>
           </td>
         </tr>
-        <% }); %>
+        <% }); } %>
       </table>
     </div>
     <%- include('../../partials/footer') -%>

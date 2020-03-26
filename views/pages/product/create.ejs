@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../../partials/head') -%>
-  </head>
-  <body>
-    <%- include('../../partials/header') -%>
-    <div class="container">
-      <h1>
-        Create new product
-      </h1>
-      <div class="d-flex align-items-center">
-        <form method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" id="name" />
-          </div>
-          <div class="form-group">
-            <label for="price">Price</label>
-            <input type="text" name="price" class="form-control" id="price" />
-          </div>
-          <div class="form-group">
-            <label for="seller">Seller</label>
-            <input type="text" name="seller" class="form-control" id="seller" />
-          </div>
-          <button type="submit" class="btn btn-primary">Sell</button>
-        </form>
-      </div>
+
+<head>
+  <%- include('../../partials/head') -%>
+</head>
+
+<body>
+  <%- include('../../partials/header') -%>
+  <div class="container">
+    <h1>
+      Tạo sản phẩm mới
+    </h1>
+    <div class="d-flex align-items-center">
+      <form method="POST">
+        <div class="form-group">
+          <label for="name">Tên</label>
+          <input type="text" name="name" class="form-control" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="price">Đơn giá</label>
+          <input type="text" name="price" class="form-control" id="price" />
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm</button>
+      </form>
     </div>
-    <%- include('../../partials/footer') -%>
-  </body>
+  </div>
+  <%- include('../../partials/footer') -%>
+</body>
+
 </html>
