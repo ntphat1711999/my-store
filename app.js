@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const listEndpoints = require('express-list-endpoints');
+const cookieParser = require('cookie-parser');
 
 // Database connect
 mongoose.set('useUnifiedTopology', true);
@@ -17,15 +18,18 @@ mongoose.connect(process.env.MONGO_URL, {
     }
 });
 
-// Route
+// Routes
 const userRoute = require('./routes/user.route');
 const productRoute = require('./routes/product.route');
 const authRoute = require('./routes/auth.route');
 
+// Middlewares
+const sessionMiddleware = require('./middlewares/session.mdw');
+
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
     extended: false

@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../../partials/head') -%>
-  </head>
-  <body>
-    <%- include('../../partials/header') -%>
-    <div class="container">
-      <h1>
-        <span>Product</span>
-        <a href="/staff/create">
-          <button class="btn btn-outline-success">New</button>
-        </a>
-      </h1>
-      <div class="d-flex align-items-center"></div>
-      <table class="table table-bordered table-dark">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Seller</th>
-          <th>Action</th>
-        </tr>
-        <% if !staff  {%>
-        <tr>
-          <td><%=staff.name %></td>
-          <td><%=staff.phone %></td>
-        </tr>
-        <% } %>
-      </table>
-    </div>
-    <%- include('../../partials/footer') -%>
-  </body>
+
+<head>
+  <%- include('../../partials/head') -%>
+</head>
+
+<body>
+  <%- include('../../partials/header') -%>
+  <div class="container">
+    <h1>
+      <span>Product</span>
+      <a href="/staff">
+        <button class="btn btn-outline-success">Quay lại</button>
+      </a>
+    </h1>
+    <div class="d-flex align-items-center"></div>
+    <table class="table table-bordered table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Họ tên</th>
+        <th>Lương</th>
+        <th>Địa chỉ</th>
+        <th>Tài khoản</th>
+        <th>Mật khẩu</th>
+      </tr>
+      <% if (user)  {%>
+      <tr>
+        <td><%=user.id%></td>
+        <td><%=user.name %></td>
+        <td><%=user.salary %></td>
+        <td><%=user.address %></td>
+        <td><%=user.username %></td>
+        <td><%=user.password %></td>
+      </tr>
+      <% } %>
+    </table>
+  </div>
+  <%- include('../../partials/footer') -%>
+</body>
+
 </html>

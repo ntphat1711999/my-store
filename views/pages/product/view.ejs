@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../../partials/head') -%>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"
-    />
-  </head>
-  <body>
-    <%- include('../../partials/header') -%>
-    <div class="container">
-      <h1>
-        <span>View products</span>
-      </h1>
-      <div class="d-flex align-items-center"></div>
-      <table class="table table-bordered table-dark">
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Seller</th>
-          <th>SellDate</th>
-          <th>Relative-time</th>
-        </tr>
-        <tr>
-          <td><%=product.name %></td>
-          <td><%=product.price %></td>
-          <td><%=product.seller %></td>
-          <td><%=sellDate%></td>
-          <td>
-            <%=dateExp%>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <%- include('../../partials/footer') -%>
-  </body>
+
+<head>
+  <%- include('../../partials/head') -%>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js" />
+</head>
+
+<body>
+  <%- include('../../partials/header') -%>
+  <div class="container">
+    <h1>
+      <span>View products</span>
+    </h1>
+    <div class="d-flex align-items-center"></div>
+    <table class="table table-bordered table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Seller</th>
+        <th>SellDate</th>
+        <th>Relative-time</th>
+      </tr>
+      <tr>
+        <td><%=product.name %></td>
+        <td><%=product.price %></td>
+        <td><%=product.seller %></td>
+        <td><%=sellDate%></td>
+        <td>
+          <%=dateExp%>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <%- include('../../partials/footer') -%>
+</body>
+
 </html>

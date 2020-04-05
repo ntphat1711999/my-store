@@ -1,13 +1,31 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const controller = require('../controllers/product.controller');
 
-router.get('/', controller.index);
+//multer
+const multer = require('multer')
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname)
+  }
+})
+const upload = multer({
+  storage
+});
 
-router.get('/create', controller.create);
+router.route('/').get(controller.index);
 
-router.post('/create', controller.postCreate);
+router.route('/create')
+  .get(controller.create)
+  .post(upload.single('avatar'), controller.postCreate);
 
-router.get('/:id', controller.get);
+router.route('/update/:id')
+  .get(controller.get)
+  .post(upload.single('avatar'), controller.updateProduct);
+
+router.route('/delete/:id')
+  .get(controller.deleteProduct);
 
 module.exports = router;
