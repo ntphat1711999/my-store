@@ -1,36 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <%- include('../partials/head') -%>
-  </head>
-  <body>
+</head>
+
+<body>
     <%- include('../partials/header') -%>
-    <h1 class="text-center">Login</h1>
-    <form action="" method="POST" class="w-25">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" class="form-control" name="username" value="<%values.username%>">
+    <!-- Breadcrumb Section Begin -->
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <a href="/"><i class="fa fa-home"></i> Home</a>
+                        <span>Register</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" name="password" value="<%values.password%>">
+    </div>
+    <!-- Breadcrumb Form Section Begin -->
+
+    <!-- Register Section Begin -->
+    <div class="register-login-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="register-form">
+                        <h2>Register</h2>
+                        <form action="" method="POST">
+                            <div class="group-input">
+                                <label for="username">Username or email address *</label>
+                                <input type="text" id="username" name="username">
+                            </div>
+                            <div class="group-input">
+                                <label for="Name">Name*</label>
+                                <input type="text" id="Name" name="name">
+                            </div>
+                            <div class="group-input">
+                                <label for="password">Password *</label>
+                                <input type="text" id="password" name="password">
+                            </div>
+                            <div class="group-input">
+                                <label for="con-pass">Confirm Password *</label>
+                                <input type="text" id="con-pass">
+                            </div>
+                            <button type="submit" class="site-btn register-btn">REGISTER</button>
+                        </form>
+                        <div class="switch-login">
+                            <a href="/account/login" class="or-login">Or Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" name="name" value="<%values.namr%>">
+    </div>
+    <!-- Register Form Section End -->
+
+    <!-- Partner Logo Section Begin -->
+    <div class="partner-logo">
+        <div class="container">
+            <div class="logo-carousel owl-carousel">
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="/img/logo-carousel/logo-1.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="/img/logo-carousel/logo-2.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="/img/logo-carousel/logo-3.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="/img/logo-carousel/logo-4.png" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="/img/logo-carousel/logo-5.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" id="phone" class="form-control" name="phone" value="<%values.phone%>">
-        </div>
-        <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" id="address" class="form-control" name="address" value="<%values.address%>">
-        </div>
-        <button type="submit" class="btn btn-primary">
-            Register
-        </button>
-    </form>
+    </div>
+    <!-- Partner Logo Section End -->
     <%- include('../partials/footer') -%>
-  </body>
+</body>
+
 </html>

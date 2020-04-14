@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGO_URL, {
 });
 
 // Routes
+const indexRoute = require('./routes/index.route');
 const userRoute = require('./routes/user.route');
 const productRoute = require('./routes/product.route');
 const authRoute = require('./routes/auth.route');
@@ -43,10 +44,8 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // render views
-app.get('/', (req, res) => {
-    res.render('pages/index');
-});
-app.use('/login', authRoute);
+app.use('/', indexRoute);
+app.use('/account', authRoute);
 app.use('/staff', userRoute);
 app.use('/product', productRoute);
 console.log(listEndpoints(app));

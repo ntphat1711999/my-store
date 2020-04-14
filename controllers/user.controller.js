@@ -11,7 +11,6 @@ module.exports.get = async function (req, res) {
     let user = await User.findOne({
         _id: req.params.id
     });
-    console.log(user)
     res.render('pages/staff/view', {
         user: user
     });
