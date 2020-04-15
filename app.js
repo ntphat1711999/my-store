@@ -8,15 +8,18 @@ const cookieParser = require('cookie-parser');
 
 // Database connect
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true
-}, function (err) {
+mongoose.connect(
+  process.env.MONGO_URL, {
+    useNewUrlParser: true,
+  },
+  function (err) {
     if (err) {
-        console.log("Connect mongoDB failed!!" + err);
+      console.log('Connect mongoDB failed!!' + err);
     } else {
-        console.log("Connect mongoDB successfull")
+      console.log('Connect mongoDB successfull');
     }
-});
+  },
+);
 
 // Routes
 const indexRoute = require('./routes/index.route');
@@ -28,13 +31,15 @@ const authRoute = require('./routes/auth.route');
 const sessionMiddleware = require('./middlewares/session.mdw');
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(morgan('dev'));
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  }),
+);
 
 // parse application/json
 app.use(bodyParser.json());
@@ -51,5 +56,5 @@ app.use('/product', productRoute);
 console.log(listEndpoints(app));
 
 app.listen(PORT, function () {
-    console.log(`Server started on http://localhost:${PORT}`);
+  console.log(`Server started on http://localhost:${PORT}`);
 });
