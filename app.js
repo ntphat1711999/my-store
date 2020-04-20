@@ -7,10 +7,11 @@ const listEndpoints = require('express-list-endpoints');
 const cookieParser = require('cookie-parser');
 
 // Database connect
-mongoose.set('useUnifiedTopology', true);
 mongoose.connect(
   process.env.MONGO_URL, {
+    useUnifiedTopology: true,
     useNewUrlParser: true,
+    useFindAndModify: true
   },
   function (err) {
     if (err) {

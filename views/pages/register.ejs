@@ -30,14 +30,14 @@
                     <div class="register-form">
                         <h2>Register</h2>
                         <form action="" method="POST">
-                            <% if (err) { %>
+                            <% if (err_msg) { %>
                             <div class="alert alert-danger" role="alert">
-                                <%- err %>
+                                <%- err_msg %>
                             </div>
                             <% } %>
                             <div class="group-input">
-                                <label for="username">Username or email address *</label>
-                                <input type="text" id="username" name="username">
+                                <label for="email">Email address *</label>
+                                <input type="text" id="email" name="email">
                             </div>
                             <div class="group-input">
                                 <label for="Name">Name*</label>
